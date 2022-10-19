@@ -7,10 +7,22 @@
 #d от 0.1 до 0.0000000001
 
 #!!! не округлять константу math
-print ('Это программа, которая вычислит число Пи c заданной точностью d ')
 import math
-print('Задайте точность вычисления Пи: ')
 
-accuracy_pi = input('Введите параметр: ')
+print('Вы хотите ввести диапазон чисел или одно число? :')
+value = int (input('Введите "1" если хотите ввести одно число и "0" если диапазон: '))
 pi = str(math.pi)
-print (pi[:len(accuracy_pi)])
+if value == 1:
+    print('Задайте точность вычисления Пи: ')
+
+    accuracy_pi = input('Введите параметр: ')
+    
+    print (pi[:len(accuracy_pi)])
+    
+else :
+    range_pi_1 = input ('Введите начало диапазона: ')
+    range_pi_2 = input ('Введите конечный параметр диапазона:')
+    len_rang_1 = len(range_pi_1)
+    len_rang_2 = len(range_pi_2)
+    for i in range (len_rang_2):
+        print(pi[:len_rang_1+i])
