@@ -34,8 +34,10 @@ for i in range (len_list):
 print (polynomial)
 result = 0
 for i in range (len(polynomial)):
-    if '-' in polynomial[i] :
+    if polynomial[i] == '0':
+        continue
+    elif '-' in polynomial[i] :
         print(polynomial[i], end = '')
     else:
         print(f'+{polynomial[i]}', end = '')
-print('= 0 ')
+print(' = 0 ')
