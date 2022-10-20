@@ -28,7 +28,7 @@ for i in range (len_list):
         polynomial[i] = var
     else:
 
-        var = (f'{polynomial[i]}x**{k-i}')
+        var = (f'{polynomial[i]}x^{k-i}')
         polynomial[i] = var
   
 print (polynomial)
