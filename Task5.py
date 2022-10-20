@@ -40,3 +40,12 @@ for i in range (len(list2_2)):
 result =[]       
 for i in range (len(list_k1)):
     result.append(int(list_k1[i]) + int(list_k2[i]))
+    
+for i in range (len(result)):
+    if result[i] == 0:
+        continue
+    elif result[i] < 0 :
+        print(result[i], end = '')
+    else:
+        print(f'{result[i]}x^{i}', end = '')
+print(' = 0 ')
