@@ -15,6 +15,10 @@ for i in range (len(list1_2)):
         for j in range(len(list1_2[i])):
             if list1_2[i][j] == '^':
                 b =int(list1_2[i][j+1])
+                if len(list1_2[i]) == 3:
+                    list_k1[b] = '1'
+                    continue
+                
                 list_k1[b]=(list1_2[i][:j-1])
     else:
         b = 0
@@ -25,7 +29,14 @@ for i in range (len(list2_2)):
         for j in range(len(list2_2[i])):
             if list2_2[i][j] == '^':
                 b =int(list2_2[i][j+1])
+                if len(list2_2[i]) == 3:
+                    list_k1[b] = '1'
+                    continue
+                
                 list_k2[b]=(list2_2[i][:j-1])
     else:
         b = 0
         list_k2[b] = (list2_2[i])
+result =[]       
+for i in range (len(list_k1)):
+    result.append(int(list_k1[i]) + int(list_k2[i]))
