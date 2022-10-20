@@ -6,3 +6,15 @@ list2_1 = list2.replace(' ', '')[: -2]
 
 list1_2 = list1_1.replace('-', '+-').split('+')
 list2_2 = list1_1.replace('-', '+-').split('+')
+
+
+list_k1= [ 0 for x in range (int(list1_2[0][-1])+1)]
+list_k2 = [ 0 for x in range (int(list2_2[0][-1])+1)]
+for i in range (len(list1_2)):
+    if 'x' in list1_2[i]:
+        for j in range(len(list1_2[i])):
+            if list1_2[i][j] == '^':
+                b =int(list1_2[i][j+1])
+                list_k1[b]=(list1_2[i][:j-1])
+    else:
+        list_k1.append(list1_2[i])
