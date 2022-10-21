@@ -7,22 +7,33 @@
 #d от 0.1 до 0.0000000001
 
 #!!! не округлять константу math
+# Вычислить число Пи c заданной точностью d
+# Пример:
+# при d = 0.001, π = 3.141
+# при d = 0.1, π = 3.1
+# при d = 0.00001, π = 3.14154
+# d от 0.1 до 0.0000000001
+
+# !!ВНИМАНИЕ
+
+# !!! не использовать константу math.pi
+
 import math
+from math import pi
 
-print('Вы хотите ввести диапазон чисел или одно число? :')
-value = int (input('Введите "1" если хотите ввести одно число и "0" если диапазон: '))
-pi = str(math.pi)
-if value == 1:
-    print('Задайте точность вычисления Пи: ')
+n = pi
+print(n)
 
-    accuracy_pi = input('Введите параметр: ')
-    
-    print (pi[:len(accuracy_pi)])
-    
-else :
-    range_pi_1 = input ('Введите начало диапазона: ')
-    range_pi_2 = input ('Введите конечный параметр диапазона:')
-    len_rang_1 = len(range_pi_1)
-    len_rang_2 = len(range_pi_2)
-    for i in range (len_rang_2):
-        print(pi[:len_rang_1+i])
+# Формула Бэйли — Боруэйна — Плаффа
+
+k = input('Введите точность измерения : ')
+
+l = len(k)
+my_pi = sum(1/16**x*(4/(8*x + 1) - 2/(8*x + 4) - 1/(8*x + 5) - 1/(8*x + 6)) for x in range(l))
+
+e = (str(my_pi))
+for i in range(l):
+    print(e[i], end = '')
+print()
+
+print(my_pi)
